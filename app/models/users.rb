@@ -1,7 +1,7 @@
 class Users < ActiveRecord::Base
   # attr_accessible :title, :body
   #
-  SUCCESS = 0
+  SUCCESS = 1
   ERR_BAD_CREDENTIALS = -1
   ERR_USER_EXISTS = -2
   ERR_BAD_USERNAME = -3
