@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     response[:errCode] = Users.add(uname, password)
     if response[:errCode] >= 0:
       response[:count] = response[:errCode]
-      response[:errCode] = User::SUCCESS
+      response[:errCode] = Users::SUCCESS
     end
     render :json => response
   end

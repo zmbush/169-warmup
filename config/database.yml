@@ -8,8 +8,7 @@ development:
   database: warmup_development
   host: localhost
   pool: 5
-  username: warmup
-  password: warmup
+  username: postgres
   min_messages: WARNING
 
 # Warning: The database defined as "test" will be erased and
@@ -20,6 +19,5 @@ test:
   database: warmup_test
   host: localhost
   pool: 5
-  username: warmup
-  password: warmup
+  username: postgres
   min_messages: WARNING

@@ -24,14 +24,8 @@ class Users < ActiveRecord::Base
     if uname.blank?
       return ERR_BAD_USERNAME
     end
-    if not uname.ascii_only?
-      return ERR_BAD_USERNAME
-    end
     if uname.length > 128
       return ERR_BAD_USERNAME
-    end
-    if not password.ascii_only?
-      return ERR_BAD_PASSWORD
     end
     if password.length > 128
       return ERR_BAD_PASSWORD
@@ -40,7 +34,10 @@ class Users < ActiveRecord::Base
     if user != nil
       return ERR_USER_EXISTS
     end
-    n = Users.new({:user => uname, :password => password, :count => 1})
+    n = Users.new
+    n.user = uname
+    n.password = password
+    n.count = 1
     n.save!
     return n.count
   end
