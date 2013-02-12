@@ -43,7 +43,7 @@ class Users < ActiveRecord::Base
   end
 
   def self.TESTAPI_resetFixture()
-    User.delete_all()
+    Users.delete_all()
     return SUCCESS
   end
 end
