@@ -1,6 +1,8 @@
 Warmup::Application.routes.draw do
-  get "TESTAPI/resetFixture"
-  get "TESTAPI/unitTests"
+  get "testapi/resetFixture"
+  get "TESTAPI/resetFixture" => "testapi#resetFixture"
+  get "testapi/unitTests"
+  get "TESTAPI/unitTests" => "testapi#unitTests"
   get "users/login"
   get "users/add"
   post "users/add"
