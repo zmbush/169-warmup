@@ -5,6 +5,5 @@ Warmup::Application.routes.draw do
   post "TESTAPI/unitTests" => "testapi#unitTests"
   post "users/add"
   post "users/login"
-
   root :to => 'users#index'
 end
