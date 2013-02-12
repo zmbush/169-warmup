@@ -10,6 +10,7 @@ development:
   pool: 5
   username: warmup
   password: warmup
+  min_messages: WARNING
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -21,3 +22,4 @@ test:
   pool: 5
   username: warmup
   password: warmup
+  min_messages: WARNING

@@ -1,12 +1,13 @@
 class Users < ActiveRecord::Base
   # attr_accessible :title, :body
   #
+  SUCCESS = 0
   ERR_BAD_CREDENTIALS = -1
   ERR_USER_EXISTS = -2
   ERR_BAD_USERNAME = -3
   ERR_BAD_PASSWORD = -4
 
-  def login(uname, password)
+  def self.login(uname, password)
     user = Users.find_by_user(uname)
     if user == nil
       return ERR_BAD_CREDENTIALS
@@ -19,21 +20,21 @@ class Users < ActiveRecord::Base
     return ERR_BAD_CREDENTIALS
   end
 
-  def add(uname, password)
+  def self.add(uname, password)
     if uname.blank?
-      return ERROR_BAD_USERNAME
+      return ERR_BAD_USERNAME
     end
     if not uname.ascii_only?
-      return ERROR_BAD_USERNAME
+      return ERR_BAD_USERNAME
     end
     if uname.length > 128
-      return ERROR_BAD_USERNAME
+      return ERR_BAD_USERNAME
     end
     if not password.ascii_only?
-      return ERROR_BAD_PASSWORD
+      return ERR_BAD_PASSWORD
     end
     if password.length > 128
-      return ERROR_BAD_PASSWORD
+      return ERR_BAD_PASSWORD
     end
     user = Users.find_by_user(uname)
     if user != nil
@@ -44,7 +45,8 @@ class Users < ActiveRecord::Base
     return n.count
   end
 
-  def TESTAPI_resetFixture()
+  def self.TESTAPI_resetFixture()
     User.delete_all()
+    return SUCCESS
   end
 end
