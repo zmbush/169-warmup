@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     password = params[:password]
     response = {}
     response[:errCode] = Users.login(uname, password)
-    if response[:errCode] >= 0:
+    if response[:errCode] >= 0
       response[:count] = response[:errCode]
       response[:errCode] = Users::SUCCESS
     end
@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     password = params[:password]
     response = {}
     response[:errCode] = Users.add(uname, password)
-    if response[:errCode] >= 0:
+    if response[:errCode] >= 0
       response[:count] = response[:errCode]
       response[:errCode] = Users::SUCCESS
     end
