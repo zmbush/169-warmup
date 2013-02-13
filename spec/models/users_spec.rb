@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Users do
   before(:each) do
+    Users.TESTAPI_resetFixture()
+
     z = Users.new
     z.user = 'zach'
     z.password = 'bush'
