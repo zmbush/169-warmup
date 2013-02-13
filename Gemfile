@@ -13,6 +13,9 @@ gem 'pg'
 
 gem 'json'
 
+gem 'rspec'
+gem 'rspec-rails'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -30,6 +33,7 @@ gem 'jquery-rails'
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
+#
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 
