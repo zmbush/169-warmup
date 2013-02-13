@@ -6,14 +6,14 @@ class TestapiController < ApplicationController
   end
 
   def unitTests
-    output = IO.popen('rake test:units')
+    output = IO.popen('rspec')
     response =  {}
     lines = output.readlines
     lines.each do |line|
-      if line =~ /.* tests, .* assertions, .* failures, .* errors\n/
+      if line =~ /.* examples, .* failures\n/
         parts = line.split
         response[:totalTests] = parts[0]
-        response[:nrFailed] = parts[4]
+        response[:nrFailed] = parts[2]
       end
     end
     response[:output] = lines.join("")
