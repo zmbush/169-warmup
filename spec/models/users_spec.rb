@@ -86,4 +86,8 @@ describe Users do
     Users.TESTAPI_resetFixture().should == Users::SUCCESS
     Users.login('zach', 'bush').should == Users::ERR_BAD_CREDENTIALS
   end
+
+  it 'should successfully do nothing' do
+    true.should == true
+  end
 end
