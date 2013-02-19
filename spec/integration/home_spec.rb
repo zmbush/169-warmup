@@ -5,16 +5,12 @@ describe 'home page' do
   include Capybara::DSL
   include HomeHelper
 
-  Capybara.default_wait_time = 60
-
   before(:each) do
     visit '/'
   end
 
   it 'prompts the user for credentials' do
-    puts page.body
-
-    find('#message-box').should have_content("please enter your credentials below")
+    find('#message-box').should have_content("Please enter your credentials below")
   end
 
   it 'allows the user to create an account', :js => true do
@@ -25,7 +21,7 @@ describe 'home page' do
 
     log_out
 
-    find('#message-box').should have_content "please enter your credentials below"
+    find('#message-box').should have_content "Please enter your credentials below"
 
     log_in "zabu1", "bubu"
 
@@ -80,6 +76,6 @@ describe 'home page' do
       log_out
     end
 
-    find('#message-box').should have_content "please enter your credentials below"
+    find('#message-box').should have_content "Please enter your credentials below"
   end
 end
