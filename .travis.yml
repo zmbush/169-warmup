@@ -1,5 +1,6 @@
 before_install:
   - "export DISPLAY=:99.0"
+  - "export SELENIUM_DELAY=10"
   - "sh -e /etc/init.d/xvfb start"
 
 before_script:

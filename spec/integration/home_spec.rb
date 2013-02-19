@@ -1,7 +1,6 @@
 require 'spec_helper'
 require 'help/home_helper'
 
-
 describe 'home page' do
   include Capybara::DSL
   include HomeHelper
@@ -11,6 +10,7 @@ describe 'home page' do
   end
 
   it 'prompts the user for credentials' do
+    
     page.should have_content("please enter your credentials below")
   end
 
