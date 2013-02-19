@@ -2,13 +2,18 @@
   <div id="message-box">
     <%= @message %>
   </div>
-  <%= form_tag('/welcome') do %>
-    <%= label_tag(:uname, "User Name:") %>
-    <%= text_field_tag(:uname) %><br />
-    <%= label_tag(:pass, "Password:") %>
-    <%= password_field_tag(:pass) %><br />
+  <div id="login-box">
+    <%= form_tag('/welcome') do %>
+      <%= label_tag(:uname, "User Name:") %>
+      <%= text_field_tag(:uname) %><br />
+      <%= label_tag(:pass, "Password:") %>
+      <%= password_field_tag(:pass) %><br />
 
-    <%= submit_tag("Login", :id => :login) %>
-    <%= submit_tag("Add User", :id => :add) %>
-  <% end %>
+      <%= submit_tag("Login", :id => :login) %>
+      <%= submit_tag("Add User", :id => :add) %>
+    <% end %>
+  </div>
+  <div id="welcome">
+    <%= submit_tag("Logout", :id => :logout) %>
+  </div>
 </div>
