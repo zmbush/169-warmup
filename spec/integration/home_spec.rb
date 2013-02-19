@@ -12,6 +12,8 @@ describe 'home page' do
   end
 
   it 'prompts the user for credentials' do
+    puts page.body
+
     find('#message-box').should have_content("please enter your credentials below")
   end
 
