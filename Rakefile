@@ -5,3 +5,7 @@
 require File.expand_path('../config/application', __FILE__)
 
 Warmup::Application.load_tasks
+
+RSpec::Core::RakeTask.new(:test)
+
+task :default => :test
