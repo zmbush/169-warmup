@@ -1,2 +1,14 @@
-<h1>Home#login</h1>
-<p>Find me in app/views/home/login.html.erb</p>
+<div id="login-form">
+  <div id="message-box">
+    <%= @message %>
+  </div>
+  <%= form_tag('/welcome') do %>
+    <%= label_tag(:uname, "User Name:") %>
+    <%= text_field_tag(:uname) %><br />
+    <%= label_tag(:pass, "Password:") %>
+    <%= password_field_tag(:pass) %><br />
+
+    <%= submit_tag("Login", :id => :login) %>
+    <%= submit_tag("Add User", :id => :add) %>
+  <% end %>
+</div>
