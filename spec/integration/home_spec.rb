@@ -5,6 +5,8 @@ describe 'home page' do
   include Capybara::DSL
   include HomeHelper
 
+  Capybara.default_wait_time = 60
+
   before(:each) do
     visit '/'
   end
@@ -14,8 +16,6 @@ describe 'home page' do
   end
 
   it 'allows the user to create an account', :js => true do
-    find('#message-box')
-
     register "zabu1", "bubu"
 
     find('#message-box').should have_content "Welcome zabu1"
