@@ -10,7 +10,7 @@ describe 'home page' do
   end
 
   it 'prompts the user for credentials' do
-    find('#message-box').should have_content("Please enter your credentials below")
+    find('#message-box').should have_content "Please enter your credentials below"
   end
 
   it 'allows the user to create an account', :js => true do

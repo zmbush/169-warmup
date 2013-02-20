@@ -13,9 +13,6 @@ gem 'pg'
 
 gem 'json'
 
-gem 'rspec'
-gem 'rspec-rails'
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -31,8 +28,10 @@ end
 gem 'jquery-rails'
 
 
-group :test do
+group :test, :development do
   gem 'capybara' 
+  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 # To use ActiveModel has_secure_password
