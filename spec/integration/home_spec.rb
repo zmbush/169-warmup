@@ -38,7 +38,7 @@ describe 'home page' do
 
   it 'does not allow the viewer to use an empty username', :js => true do
     register "", "pass"
-    find('#message-box').should have_content "The username should be non-empty and at most 128 characters long. Please try again."
+    find('#message-box').should have_content "The user name should be non-empty and at most 128 characters long. Please try again."
   end
 
   it 'does not allow the viewer to use a 129+ character username', :js => true do
@@ -72,7 +72,7 @@ describe 'home page' do
     10.times do |n|
       log_in "zach3", "bush"
       find('#message-box').should have_content "Welcome zach3"
-      find('#message-box').should have_content "You have logged in #{n + 1} times."
+      find('#message-box').should have_content "You have logged in #{n + 2} times."
       log_out
     end
 
