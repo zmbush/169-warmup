@@ -6,7 +6,7 @@ class TestapiController < ApplicationController
   end
 
   def unitTests
-    output = IO.popen('rspec')
+    output = IO.popen('bundle exec rake')
     response =  {}
     lines = output.readlines
     lines.each do |line|
