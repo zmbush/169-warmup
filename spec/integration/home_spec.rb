@@ -43,7 +43,7 @@ describe 'home page' do
 
   it 'does not allow the viewer to use a 129+ character username', :js => true do
     register 'z'*129, ''
-    find('#message-box').should have_content "The username should be non-empty and at most 128 characters long. Please try again."
+    find('#message-box').should have_content "The user name should be non-empty and at most 128 characters long. Please try again."
   end
 
   it 'does not allow the viewer to use a 129+ character password', :js => true do
